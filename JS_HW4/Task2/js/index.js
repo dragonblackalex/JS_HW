@@ -1,11 +1,27 @@
 
-let factorial = 7;
-let result = factorial--;
-while (factorial > 0) {
-  result = factorial * result;
-  factorial--;
+
+// Task №2
+class CustomString {
+  reverse(str) {
+    const resultArr = [];
+    for (let i of str) resultArr.unshift(i);
+    return resultArr.join("");
+  }
+  ucFirst(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+  ucWords(str) {
+    return str
+      .split(" ")
+      .map((i) => this.ucFirst(i))
+      .join(" ");
+  }
 }
-console.log(result)
+
+let myStr = new CustomString();
+console.log(myStr.reverse("ytrewq"));
+console.log(myStr.ucFirst("qwerty"));
+console.log(myStr.ucWords("qwerty qwerty qwerty"));
 
 
 
